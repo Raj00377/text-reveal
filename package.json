@@ -10,6 +10,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Raj00377/text-reveal"
+  },
+  "bugs": {
+    "url": "https://github.com/Raj00377/text-reveal/issues"
+  },
   "peerDependencies": {
     "react": ">=16.8.0"
   },
