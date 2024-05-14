@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center" style="background-image: linear-gradient(to bottom, #1b2e4c, #242137, #211724, #170d13, #000000);padding : 28px;">
 <img src='https://i.imgur.com/IHeybyC.png' title='Text-reveal' />
 </h1>
 <h3 align="center">
