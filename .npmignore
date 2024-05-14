@@ -3,4 +3,5 @@ src
 rollup.config.js
 tsconfig.json
 storybook-static
+assets
 .*
