@@ -2,7 +2,7 @@
 <img src='https://i.imgur.com/IHeybyC.png' title='Text-reveal' />
 </h1>
 <h3 align="center">
-  An open-source, lightweight UI library for React.
+  An open-source, lightweight UI package for React.
 </h3>
 <h3 align="center">
 
