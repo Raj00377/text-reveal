@@ -1,17 +1,39 @@
 {
   "name": "text-reveal",
   "version": "0.2.1",
-  "description": "",
+  "description": "A React text animation with a smooth color transition for each character while scrolling.",
+  "keywords": [
+    "react",
+    "reveal",
+    "text",
+    "string",
+    "color",
+    "control",
+    "text-reveal",
+    "motion",
+    "velocity",
+    "fill",
+    "direction",
+    "hooks",
+    "animation",
+    "css",
+    "component"
+  ],
   "type": "module",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "build:dev": "rollup -c --environment NODE_ENV:development",
     "build": "rollup -c --environment NODE_ENV:production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "author": "",
-  "license": "ISC",
+  "author":  {
+    "name": "Rajkumar"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Raj00377/text-reveal"
@@ -19,6 +41,7 @@
   "bugs": {
     "url": "https://github.com/Raj00377/text-reveal/issues"
   },
+  "homepage": "https://text-reveal.web.app/",
   "peerDependencies": {
     "react": ">=16.8.0"
   },
