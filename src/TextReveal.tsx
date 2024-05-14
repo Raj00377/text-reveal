@@ -3,11 +3,29 @@ import { useMemo, useRef } from "react";
 import useScroll from "./hooks/useScroll";
 
 interface Props {
+  /**
+  * Array of text.
+  */
   text: string[],
+  /**
+   * Initial color of the text before fill.
+   */
   textColor?: string,
+  /**
+   * Color which is going to fill the character while scroll
+   */
   fillColor?: string,
+  /**
+   * Speed to fill/show the text (default 100 means 100%)
+   */
   fillSpeed?: number,
+  /**
+   * Delay to fill/show the text (default 3.5, give more than 1)
+   */
   fillDelay?: number,
+  /**
+   * Direction to fill/show the text
+   */
   fillDirection?: 'left-right' | 'top-bottom' | 'slant-top-bottom' | 'slant-bottom-top'
 }
 
@@ -19,7 +37,7 @@ interface DirectionFunctionProps {
 /**
  * @description Smooth Color change animation in every characters in a text while scroll
  * @prop text - Array of text.
- * @prop textColor - Initial color of the text before file
+ * @prop textColor - Initial color of the text before fill
  * @prop fillColor - Color which is going to fill the character while scroll
  * @prop fillSpeed - Speed to fill/show the text (default 100 means 100%)
  * @prop fillDelay - Delay to fill/show the text (default 3.5, give more than 1)
@@ -60,7 +78,7 @@ const TextReveal = ({ text, textColor = 'cadetblue', fillColor = 'white', fillSp
     return { startHeight, stopHeight, breakPoint }
   }
 
-  const { startHeight, breakPoint } = useMemo(() => getPoints(),[ref.current])
+  const { startHeight, breakPoint } = useMemo(() => getPoints(), [ref.current])
 
   const generateClipPath = (index: number) => {
     if (scrollY >= startHeight) {
