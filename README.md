@@ -1,18 +1,12 @@
-<h1 align="center" style="background-image: linear-gradient(to bottom, #1b2e4c, #242137, #211724, #170d13, #000000);padding : 28px;">
-<img src='https://i.imgur.com/IHeybyC.png' title='Text-reveal' />
+<h1 align="center">
+<img src='https://raw.githubusercontent.com/Raj00377/text-reveal/update/readme/assets/text-reveal-with-bg.png' title='Text-reveal' />
 </h1>
 <h3 align="center">
-  An open-source, lightweight UI package for React.
+  An open-source, lightweight micro-frontend package for React.
 </h3>
-<h3 align="center">
-
-</h3>
-<br/>
 <br/>
 <p align="center">
-  <a href="https://www.framer.com?utm_source=motion-readme">
-    <img src="https://ezgif.com/save/ezgif-1-3f20ade148.gif" width="1000" alt="Framer Banner" />
-  </a>
+    <img src="https://raw.githubusercontent.com/Raj00377/text-reveal/update/readme/assets/ScreenRecording2024-05-14at8.21.14PM-ezgif.com-video-to-gif-converter.gif" width="1000" alt="Framer Banner" />
 </p>
 
 <br>
