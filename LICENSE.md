@@ -1,6 +1,6 @@
 (The MIT License)
 
-Copyright (c) 2024 [Rajkumar](dev.rajkumar.codes@gmail.com)
+Copyright (c) 2024 [Rajkumar](mailto:dev.rajkumar.codes@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
