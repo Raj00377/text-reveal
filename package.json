@@ -3,13 +3,13 @@
   "version": "1.0.1",
   "description": "A React text animation with a smooth color transition for each character while scrolling.",
   "keywords": [
+    "text-reveal",
     "react",
     "reveal",
     "text",
     "string",
     "color",
     "control",
-    "text-reveal",
     "react-text-reveal",
     "highlight",
     "scroll",
@@ -23,7 +23,9 @@
     "hooks",
     "animation",
     "css",
-    "component"
+    "component",
+    "effect",
+    "text-effects"
   ],
   "type": "module",
   "main": "dist/index.js",
@@ -59,7 +61,6 @@
     "@storybook/addon-interactions": "^8.0.10",
     "@storybook/addon-links": "^8.0.10",
     "@storybook/addon-mdx-gfm": "^8.0.10",
-    "@storybook/addon-onboarding": "^8.0.10",
     "@storybook/blocks": "^8.0.10",
     "@storybook/react": "^8.0.10",
     "@storybook/react-vite": "^8.0.10",
