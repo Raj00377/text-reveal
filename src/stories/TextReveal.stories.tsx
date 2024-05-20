@@ -25,16 +25,17 @@ export const Example: Story = {
   decorators: [
     (Story) => (
       <div style={{ height: '200vh', fontFamily: 'sans-serif', padding: '1rem', background: 'black' }}>
+        <div style={{ color: 'white', marginBottom: '0.5rem' }}>👆 Reload 🔄 once you did any change in <u>Controls</u></div>
         <div style={{ fontSize: '1.5rem', color: 'white' }}>Scroll down to see the text reveal</div>
-        <div style={{ fontSize: '5rem', marginTop: '75vh' }}>
+        <div style={{ fontSize: '5rem', marginTop: '60vh' }}>
           <Story />
         </div>
       </div>
     )],
   args: {
     text: ['Hello world'],
-    textColor: 'white',
-    fillColor: 'aqua',
+    textColor: '#3d3d3d',
+    fillColor: '#f47979',
     fillSpeed: 100,
     fillDelay: 3.5,
   },
