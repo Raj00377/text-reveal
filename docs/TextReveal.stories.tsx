@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import TextReveal from '../TextReveal';
+import TextReveal from '../src/TextReveal';
 import './text-reveal.stories.css';
 
 const meta: Meta<typeof TextReveal> = {
@@ -11,7 +11,7 @@ const meta: Meta<typeof TextReveal> = {
         component: 'Smooth Color change animation in every characters in a text while scroll',
       }
     },
-  }
+  },
 };
 
 export default meta;
@@ -38,5 +38,6 @@ export const Example: Story = {
     fillColor: '#f47979',
     fillSpeed: 100,
     fillDelay: 3.5,
+    fillDirection: "top-bottom"
   },
 };
