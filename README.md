@@ -24,13 +24,11 @@
 ---------------
 
 1. Install:
-
-  ```
+  ```jsx
   npm install text-reveal
   ```
 
 2. Use:
-
 ```jsx
   import TextReveal from 'text-reveal';
 
@@ -41,14 +39,14 @@
   />
 ```
 
-3.Styles inherits from parent:
+3. Styles inherits from parent:
 ```jsx
   <div style={{fontSize : '2rem', backgroundColor : 'black'}}>
     <TextReveal 
       text={['Hello', 'world']} 
       textColor="grey" 
       fillColor="white" 
-      />
+    />
   </div>
 ```
 
