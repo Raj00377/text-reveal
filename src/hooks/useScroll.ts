@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useMemo, useCallback } from 'react'
 
 type ParentElementType = HTMLElement | Window | null;
 
@@ -40,11 +40,11 @@ const useScroll = (ref: React.MutableRefObject<HTMLDivElement | null>) => {
     setParentElement(getScrollParent(ref.current))
   }, [ref?.current])
 
-  const onScroll = () => {
+  const onScroll = useCallback(() => {
     setScrollY(() => {
       return parentElement instanceof Window ? parentElement.scrollY : (parentElement?.scrollTop || 0);
     });
-  };
+  },[parentElement, ref?.current]);
 
   useEffect(() => {
     //add eventlistener to window
