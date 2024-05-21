@@ -1,4 +1,3 @@
-
 import { useMemo, useRef } from "react";
 import useScroll from "./hooks/useScroll";
 
@@ -59,39 +58,39 @@ const getClipPathForDirection = ({ fillDirection, clipProgress }: DirectionFunct
   }
 }
 
+const DEFAULT_CLIP_PATH = 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)';
 
-
-const TextReveal = ({ text, textColor = 'cadetblue', fillColor = 'white', fillSpeed = 100, fillDelay = 3.5, fillDirection = 'left-right' }: Props) => {
+const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSpeed = 100, fillDelay = 3.5, fillDirection = 'left-right' }: Props) => {
 
   const ref = useRef<HTMLDivElement | null>(null);
-  const scrollY = useScroll();
+  const { scrollY, parentElement, parentHeight, elementTop } = useScroll(ref);
 
   const getPoints = () => {
     let startHeight = 0;
     let stopHeight = 0;
     let breakPoint = 0;
     if (ref && ref.current) {
-      startHeight = (ref.current?.offsetTop - window.innerHeight) + (window.innerHeight / fillDelay);
-      stopHeight = (window.innerHeight + startHeight) - (window.innerHeight / fillDelay);
+      startHeight = (elementTop - parentHeight) + (parentHeight / fillDelay);
+      stopHeight = (parentHeight + startHeight) - (parentHeight / fillDelay);
       breakPoint = (stopHeight - startHeight) / text.length;
     }
     return { startHeight, stopHeight, breakPoint }
   }
 
-  const { startHeight, breakPoint } = useMemo(() => getPoints(), [ref.current])
+  const { startHeight, breakPoint } = useMemo(() => getPoints(), [parentElement, parentHeight])
 
   const generateClipPath = (index: number) => {
     if (scrollY >= startHeight) {
       const clipProgress = (((scrollY - startHeight) - (breakPoint * (index))) / (breakPoint)) * fillSpeed;
-      return getClipPathForDirection({ fillDirection, clipProgress });
+      return clipProgress ? getClipPathForDirection({ fillDirection, clipProgress }) : DEFAULT_CLIP_PATH;
     }
-    else return `polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)`;
+    else return DEFAULT_CLIP_PATH;
   }
 
   return (
-    <>
+    <div ref={ref}>
       {
-        text.map((individualText, index) => <div ref={index === 0 ? ref : null} key={individualText + index}
+        text.map((individualText, index) => <div key={individualText + '-' + index}
           style={{ position: 'relative', width: 'fit-content' }}
         >
           <div style={{ color: textColor }}>{individualText}</div>
@@ -102,7 +101,7 @@ const TextReveal = ({ text, textColor = 'cadetblue', fillColor = 'white', fillSp
           </div>
         </div>)
       }
-    </>
+    </div>
   )
 }
 
