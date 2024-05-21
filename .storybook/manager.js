@@ -7,5 +7,5 @@ addons.setConfig({
 
 const link = document.createElement('link');
 link.setAttribute('rel', 'shortcut icon');
-link.setAttribute('href', 'https://raw.githubusercontent.com/Raj00377/text-reveal/update/readme/assets/text-reveal-with-bg.png');
+link.setAttribute('href', 'https://raw.githubusercontent.com/Raj00377/text-reveal/update/assets/assets/favicon/android-chrome-512x512.png');
 document.head.appendChild(link);
