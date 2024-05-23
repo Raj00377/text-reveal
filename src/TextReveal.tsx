@@ -11,11 +11,19 @@ interface Props {
    */
   textColor?: string,
   /**
-   * Color which is going to fill the character while scroll
+   * Color which is going to fill the character while scroll.
+   * 
+   * Gradients supported:
+   * Syntax : linear-gradient(/value/)
+   * E.g. linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%)
    */
   fillColor?: string,
   /**
    * Speed to fill/show the text (default 100 means 100%)
+   * 
+   * Gradients supported:
+   * Syntax : linear-gradient(/value/)
+   * E.g. linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%)
    */
   fillSpeed?: number,
   /**
@@ -58,6 +66,14 @@ const getClipPathForDirection = ({ fillDirection, clipProgress }: DirectionFunct
   }
 }
 
+const getColor = (color: string) => {
+  return color.includes('linear-gradient') ? {
+    'background': color,
+    'backgroundClip': 'text',
+    'WebkitTextFillColor': 'transparent'
+  } : { color }
+}
+
 const DEFAULT_CLIP_PATH = 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)';
 
 const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSpeed = 100, fillDelay = 3.5, fillDirection = 'left-right' }: Props) => {
@@ -78,6 +94,8 @@ const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSp
   }
 
   const { startHeight, breakPoint } = useMemo(() => getPoints(), [parentElement, parentHeight])
+  const initialColorStyle = useMemo(() => getColor(textColor), [textColor])
+  const fillColorStyle = useMemo(() => getColor(fillColor), [fillColor])
 
   const generateClipPath = (index: number) => {
     if (scrollY >= startHeight) {
@@ -93,9 +111,9 @@ const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSp
         text.map((individualText, index) => <div key={individualText + '-' + index}
           style={{ position: 'relative', width: 'fit-content' }}
         >
-          <div style={{ color: textColor }}>{individualText}</div>
+          <div style={initialColorStyle}>{individualText}</div>
           <div
-            style={{ clipPath: generateClipPath(index), position: 'absolute', color: fillColor, top: 0, left: 0 }}
+            style={{ clipPath: generateClipPath(index), position: 'absolute', color: fillColor, top: 0, left: 0, ...fillColorStyle }}
           >
             {individualText}
           </div>
