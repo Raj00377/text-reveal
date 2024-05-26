@@ -100,6 +100,7 @@ const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSp
   const generateClipPath = (index: number) => {
     if (scrollY >= startHeight) {
       const clipProgress = (((scrollY - startHeight) - (breakPoint * (index))) / (breakPoint)) * fillSpeed;
+      if (clipProgress >= 100) return;
       return clipProgress ? getClipPathForDirection({ fillDirection, clipProgress }) : DEFAULT_CLIP_PATH;
     }
     else return DEFAULT_CLIP_PATH;
