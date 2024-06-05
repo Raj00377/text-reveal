@@ -1,6 +1,6 @@
 {
   "name": "text-reveal",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A React text animation with a smooth color transition for each character while scrolling.",
   "keywords": [
     "text-reveal",
