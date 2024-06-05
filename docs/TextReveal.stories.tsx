@@ -61,8 +61,8 @@ export const example_transparent: Story = {
     )],
   args: {
     text: ['Hello world', 'Hail JS 🙌'],
-    textColor: "#1d926f",
-    fillColor: "transparent",
+    textColor: "transparent",
+    fillColor: "#1d926f",
     fillSpeed: 100,
     fillDelay: 30,
     fillDirection: "left-right",
