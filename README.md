@@ -15,7 +15,6 @@
 ---------------
 
 * **Zero dependency** – This package works independently.
-* **Tiny** – Package size is only ~2.5kb.
 * **Flexible** – Styles can be inherited from parent.
 * **Simple** – Uses basic CSS transition animations.
 * **Control** – Customize colors, speed, direction.
