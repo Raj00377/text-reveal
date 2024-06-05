@@ -1,14 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
-
-interface Props {
-  initialValue: number,
-  targetValue: number,
-  duration: number
-}
+import { CounterProps } from '../types';
 
 let intervalID: NodeJS.Timeout
 
-const useCounter = ({ initialValue = 0, targetValue = 100, duration = 2000 }: Props) => {
+const useCounter = ({ initialValue = 0, targetValue = 100, duration = 2000 }: CounterProps) => {
   const [count, setCount] = useState(initialValue);
 
   const [counterState, setCounterState] = useState<null | boolean>(null);
