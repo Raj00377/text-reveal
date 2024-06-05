@@ -52,6 +52,7 @@ const generateClipPath = ({ fillType, ref, fillDelay, fillDirection, fillSpeed, 
       const generateClipPathForScroll = (index: number) => {
         if (scrollY >= startHeight) {
           const clipProgress = (((scrollY - startHeight) - (breakPoint * (index))) / (breakPoint)) * fillSpeed;
+          if (clipProgress >= 100) return;
           return clipProgress ? getClipPathForDirection({ fillDirection, clipProgress }) : DEFAULT_CLIP_PATH;
         }
         else return DEFAULT_CLIP_PATH;
@@ -61,6 +62,7 @@ const generateClipPath = ({ fillType, ref, fillDelay, fillDirection, fillSpeed, 
       const generateClipPathForTimer = (index: number) => {
         if (scrollY > startHeight) {
           const clipProgress = ((count - ((100 / textLength) * (index))) / (100 / textLength)) * fillSpeed;
+          if (clipProgress >= 100) return;
           return clipProgress ? getClipPathForDirection({ fillDirection, clipProgress: clipProgress }) : DEFAULT_CLIP_PATH;
         }
         else return DEFAULT_CLIP_PATH
