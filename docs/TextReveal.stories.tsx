@@ -9,7 +9,7 @@ const meta: Meta<typeof TextReveal> = {
   parameters: {
     docs: {
       description: {
-        component: 'Smooth Color change animation in every characters in a text while scroll',
+        component: 'Smooth Color change animation in every character in a text',
       }
     },
   },
@@ -37,6 +37,32 @@ export const example_solid_colors: Story = {
     text: ['Hello world', 'Hail JS 🙌'],
     textColor: '#3d3d3d',
     fillColor: '#f47979',
+    fillSpeed: 100,
+    fillDelay: 30,
+    fillDirection: "left-right",
+    fillType: 'scroll'
+  },
+};
+
+export const example_transparent: Story = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  name: "Example: Transparent fill",
+  decorators: [
+    (Story) => (
+      <div style={{ height: '200vh', fontFamily: 'sans-serif', padding: '1rem', background: 'black' }}>
+        <div style={{ color: 'white', marginBottom: '0.5rem' }}>👆 Reload 🔄 once you did any change in <u>Controls</u></div>
+        <div style={{ fontSize: '1.5rem', color: 'white' }}>Scroll down to see the text reveal</div>
+        <div style={{ fontSize: '5rem', marginTop: '60vh' }}>
+          <Story />
+        </div>
+      </div>
+    )],
+  args: {
+    text: ['Hello world', 'Hail JS 🙌'],
+    textColor: "#1d926f",
+    fillColor: "transparent",
     fillSpeed: 100,
     fillDelay: 30,
     fillDirection: "left-right",
