@@ -17,25 +17,25 @@ const getClipPathForDirection = ({ fillDirection, clipProgress }: DirectionFunct
   }
 }
 
-const getPoints = ({ ref, elementTop, parentHeight, fillDelay, textLength }: GetPointsProps) => {
+const getPoints = ({ ref, elementTop, parentHeight, fillDelay, textLength, freeScroll }: GetPointsProps) => {
   let startHeight = 0;
   let stopHeight = 0;
   let breakPoint = 0;
   if (ref && ref.current) {
     startHeight = (elementTop - parentHeight) + (parentHeight * (fillDelay / 100));
     stopHeight = (parentHeight + startHeight) - (parentHeight * (fillDelay / 100));
-    breakPoint = (stopHeight - startHeight) / textLength;
+    breakPoint = freeScroll ? (ref?.current?.clientHeight) / textLength : (stopHeight - startHeight) / textLength;
   }
   return { startHeight, stopHeight, breakPoint }
 }
 
 const DEFAULT_CLIP_PATH = 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)';
 
-const generateClipPath = ({ fillType, ref, fillDelay, fillDirection, fillSpeed, fillDuration, textLength }: GenerateClipPathProps) => {
+const generateClipPath = ({ fillType, ref, fillDelay, fillDirection, fillSpeed, fillDuration, textLength, freeScroll }: GenerateClipPathProps) => {
 
   const { scrollY, parentElement, parentHeight, elementTop } = useScroll(ref);
 
-  const { startHeight, breakPoint } = useMemo(() => getPoints({ ref, elementTop, parentHeight, fillDelay, textLength }), [ref, parentElement, parentHeight])
+  const { startHeight, breakPoint } = useMemo(() => getPoints({ ref, elementTop, parentHeight, fillDelay, textLength, freeScroll }), [ref, parentElement, parentHeight])
 
   const { count, startCounter, stopCounter } = useCounter({ initialValue: 0, targetValue: 100, duration: fillDuration > 999 ? Math.abs(fillDuration - 1000) : fillDuration });
 
