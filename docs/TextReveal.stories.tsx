@@ -48,7 +48,7 @@ export const example_transparent: Story = {
   parameters: {
     layout: 'fullscreen',
   },
-  name: "Example: Transparent fill",
+  name: "Example: Transparent",
   decorators: [
     (Story) => (
       <div style={{ height: '200vh', fontFamily: 'sans-serif', padding: '1rem', background: 'black' }}>
@@ -148,4 +148,31 @@ export const example_timer: Story = {
       },
     }
   }
+};
+
+export const example_paragraph: Story = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  name: "Example: Paragraph",
+  decorators: [
+    (Story) => (
+      <div style={{ height: '730vh', fontFamily: 'sans-serif', padding: '1rem', background: 'black' }}>
+        <div style={{ color: 'white', marginBottom: '0.5rem' }}>👆 Reload 🔄 once you did any change in <u>Controls</u></div>
+        <div style={{ fontSize: '1.5rem', color: 'white' }}>Scroll down to see the text reveal</div>
+        <div style={{ fontSize: '3.75rem', marginTop: '60vh' }}>
+          <Story />
+        </div>
+      </div>
+    )],
+  args: {
+    text: ['Hello world,', 'Free and Open Source Software (FOSS)', 'promotes s/w that can be freely used,', 'modified, and distributed by anyone.', 'The freedom to use the software ', 'for any purpose and access to the ', 'source code and ability to share', 'both original and modified version', 'the movement was shaped by ', 'Richard Stallman\'s GNU Project', 'and the Free Software Foundation', 'along with Linus Torvalds development', 'of the Linux kernel.', 'Benefits of FOSS include cost savings,', 'more security, transparency, flexibility', 'and a collaborative community.', ' Challenges include potential issues with', 'support, usability, compatibility,', 'funding, time, and people.', 'Popular FOSS examples include', 'Linux, Apache, MySQL, Git,', 'LibreOffice, and Mozilla Firefox.', 'Despite challenges, the FOSS movement', 'continues to significantly influence', 'the software industry through its', 'emphasis on innovation, cost reduction', 'and open collaboration.' ],
+    textColor: "#252525",
+    fillColor: "#a8a8ff",
+    fillSpeed: 100,
+    fillDelay: 30,
+    fillDirection: "left-right",
+    fillType: 'scroll',
+    freeScroll: true
+  },
 };
