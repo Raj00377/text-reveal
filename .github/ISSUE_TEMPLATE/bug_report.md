@@ -1,14 +1,5 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
----
-
----
-name: Bug report
 about: Let us know about some broken functionality
 title: "[BUG]"
 labels: bug
