@@ -8,6 +8,7 @@ export interface TextRevealProps {
    * 
    * Gradients supported:
    * Syntax : linear-gradient(/value/)
+   * 
    * E.g. linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%)
    */
   textColor?: string,
@@ -16,6 +17,7 @@ export interface TextRevealProps {
    * 
    * Gradients supported:
    * Syntax : linear-gradient(/value/)
+   * 
    * E.g. linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%)
    */
   fillColor?: string,
@@ -47,9 +49,20 @@ export interface TextRevealProps {
    * Works when fillType='timer'
    * 
    * How much duration to fill/show the text
+   * 
    * Default 2000 (milliseconds)
    */
-  fillDuration?: number
+  fillDuration?: number,
+  /**
+   * Having a paragraph?
+   * Set freeScroll = true,
+   * 
+   * It takes relative content height and makes transition accordingly
+   * 
+   * Default value = false
+   *
+   */
+  freeScroll?: boolean
 }
 
 export interface GenerateClipPathProps {
@@ -59,7 +72,8 @@ export interface GenerateClipPathProps {
   fillDelay: number,
   fillDirection: 'left-right' | 'top-bottom' | 'slant-top-bottom' | 'slant-bottom-top',
   fillDuration: number,
-  textLength: number
+  textLength: number,
+  freeScroll: boolean
 }
 
 
@@ -68,7 +82,8 @@ export interface GetPointsProps {
   elementTop: number,
   parentHeight: number,
   fillDelay: number,
-  textLength: number
+  textLength: number,
+  freeScroll: boolean
 }
 
 export interface DirectionFunctionProps {
