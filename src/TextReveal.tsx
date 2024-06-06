@@ -14,20 +14,20 @@ import { TextRevealProps } from "./types";
  * @prop fillDuration - Works when fillType='timer',How much duration to fill/show the text Default 2000 (milliseconds)
 */
 
-const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSpeed = 100, fillDelay = 30, fillDirection = 'left-right', fillType = 'scroll', fillDuration = 2000 }: TextRevealProps) => {
+const TextReveal = ({ text, textColor = '#3d3d3d', fillColor = '#f47979', fillSpeed = 100, fillDelay = 30, fillDirection = 'left-right', fillType = 'scroll', fillDuration = 2000, freeScroll = false }: TextRevealProps) => {
 
   const ref = useRef<HTMLDivElement | null>(null);
 
   const initialColorStyle = useMemo(() => getColor(textColor), [textColor])
   const fillColorStyle = useMemo(() => getColor(fillColor), [fillColor])
 
-  const { generateClipPathFunction } = generateClipPath({ fillType, ref, fillDelay, fillDirection, fillSpeed, fillDuration, textLength: text.length })
+  const { generateClipPathFunction } = generateClipPath({ fillType, ref, fillDelay, fillDirection, fillSpeed, fillDuration, textLength: text.length, freeScroll })
 
   return (
     <div ref={ref}>
       {
         text.map((individualText, index) => <div key={individualText + '-' + index}
-          style={{ position: 'relative', width: 'fit-content' }}
+          style={{ position: 'relative', width: 'fit-content', whiteSpace: 'nowrap' }}
         >
           <div style={initialColorStyle}>{individualText}</div>
           <div
