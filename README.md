@@ -55,7 +55,7 @@
 
 ### 💎 Contribute
 
-- Want to contribute? I'd love that. Please raise [PRs](https://github.com/Raj00377/text-reveal/pulls).
+- Want to contribute? I'd love that. [Contributing guide](https://github.com/Raj00377/text-reveal/blob/main/CONTRIBUTING.md) got you covered.
 
 ### 👩🏻‍⚖️ License
 
