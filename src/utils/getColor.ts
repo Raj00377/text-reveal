@@ -1,8 +1,8 @@
 const getColor = (color: string) => {
   return color.includes('linear-gradient') ? {
     'background': color,
-    'backgroundClip': 'text',
-    'WebkitTextFillColor': 'transparent'
+    'WebkitBackgroundClip' : 'text',
+    'WebkitTextFillColor': 'transparent',
   } : { color }
 }
 
